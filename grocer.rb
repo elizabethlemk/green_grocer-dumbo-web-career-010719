@@ -45,10 +45,9 @@ def apply_clearance(cart)
 end
 
 def checkout(cart, coupons)
-if cart.length == 1
-  consolidate_cart(cart)
-  apply_coupons(cart, coupons)
-  apply_clearance(cart)
-end
-
+  if cart.length == 1
+    consolidate_cart(cart)
+    apply_coupons(cart, coupons)
+    apply_clearance(cart)
+  end
 end
