@@ -1,9 +1,17 @@
 def consolidate_cart(cart)
   new_cart = {}
-  cart.each do |array|
-    array.each do |hash|
-      hash.each do |property, other_hash|
-        other_hash.each do |price, clearance|
+  count = 0
+  cart.each_with_index do |item, index|
+    item.each do |food, info|
+      if new_cart[food]
+        new_cart[food][:count] += 1
+      else
+        new_cart[food] = info
+        result[food][:count] = 1
+      end
+    end
+  end
+  new_cart
 end
 
 def apply_coupons(cart, coupons)
