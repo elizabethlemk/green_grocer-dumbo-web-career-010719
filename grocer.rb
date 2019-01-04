@@ -1,6 +1,6 @@
 def consolidate_cart(cart:[])
   new_cart = {}
-  cart.each_with_index do |item, index|
+  cart.each do |item|
     item.each do |food, info|
       if new_cart[food]
         new_cart[food][:count] += 1
