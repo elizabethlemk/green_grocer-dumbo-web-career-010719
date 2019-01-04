@@ -1,15 +1,15 @@
 def consolidate_cart(cart)
-  result = {}
-  cart.each do |info_hash|
-    info_hash.each do |name, price_hash|
-      if result[name].nil?
-        result[name] = price_hash.merge({:count = 1})
+  hash = {}
+  cart.each do |item_hash|
+    item_hash.each do |name, price_hash|
+      if hash[name].nil?
+        hash[name] = price_hash.merge({:count => 1})
       else
-        result[name][:count] += 1
+        hash[name][:count] += 1
       end
     end
   end
-  result
+  hash
 end
 
 
