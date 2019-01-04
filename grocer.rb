@@ -1,4 +1,4 @@
-def consolidate_cart(cart)
+def consolidate_cart(cart:[])
   new_cart = {}
   count = 0
   cart.each_with_index do |item, index|
