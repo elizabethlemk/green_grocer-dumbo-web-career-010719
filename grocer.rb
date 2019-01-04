@@ -1,15 +1,20 @@
-def consolidate_cart(cart:[])
-  result = {}
-  cart.each do |foodHash|
-    foodHash.each do |food, info|
-      if result[food] == nil
-        result[food][:count] = 1
+def consolidate_cart(cart: [])
+  # code here	
+   consolCart = {}
+
+   cart.each do |foodHash|
+    foodHash.each do |food, foodData|
+      consolCartData = consolCart[food]
+      if consolCartData == nil 
+        consolCartData = {}
+        consolCart[food] = foodData
+        consolCart[food][:count] = 1
       else
-        result[food][:count] += 1
+        consolCart[food][:count] += 1
       end
     end
   end
-  result
+  consolCart
 end
 
 def apply_coupons(cart, coupons)
