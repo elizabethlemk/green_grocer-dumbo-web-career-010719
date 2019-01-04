@@ -1,11 +1,9 @@
 def consolidate_cart(cart: [])
-  # code here	
    consolCart = {}
-
    cart.each do |foodHash|
     foodHash.each do |food, foodData|
       consolCartData = consolCart[food]
-      if consolCartData == nil 
+      if consolCartData == nil
         consolCartData = {}
         consolCart[food] = foodData
         consolCart[food][:count] = 1
